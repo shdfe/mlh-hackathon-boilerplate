@@ -4,7 +4,7 @@
 
   <body{% if page.custom_class %} class="{{ page.custom_class }}"{% endif %}>
     {% include trust_badge.html %}
-
+    {% include navbar.html %}
     {{ content }}
 
     <section class="footer">
@@ -15,7 +15,10 @@
     </section>
 
     <script src="{{ '/js/jquery-1.11.3.js' | prepend: site.baseurl | prepend: site.url }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
     {% include analytics/google_analytics.html ga_id=site.tracking.google_analytics %}
+  
   </body>
 </html>
