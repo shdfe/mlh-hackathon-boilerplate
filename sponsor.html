@@ -23,6 +23,7 @@ layout: default
                 var adobeDCView = new AdobeDC.View({clientId: "fb64659f0e51451687d96fd74e87b28b", divId: "adobe-dc-view"});
                 adobeDCView.previewFile({
                     content:{location: {url: "https://altohacks.github.io/altohacks/sponsorpacket.pdf"}},
+                    headers: [{"Access-Control-Allow-Origin":"*"}, {"Access-Control-Allow-Headers":"X-Requested-With"}],
                     metaData:{fileName: "Sponsor Packet.pdf"}
                 }, {});
             });
