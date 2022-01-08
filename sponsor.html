@@ -10,12 +10,23 @@ layout: default
     </div>
   </section>
 
+
 <section class="about bg_gradient" style="padding-top:24px;" >
     <div class="container">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
         <button class="btn btn-success btn-lg"><a href="sponsorpacket.pdf" class="darklink" download="AltoHacks_Sponsor_Packet.pdf" >Download Sponsorship Packet</a></button>
         <br></br>
-        <iframe src="sponsorpacket.pdf" style="border:0;" width="90%" height="1000"></iframe>
+        <div id="adobe-dc-view"></div>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                var adobeDCView = new AdobeDC.View({clientId: "fb64659f0e51451687d96fd74e87b28b", divId: "adobe-dc-view"});
+                adobeDCView.previewFile({
+                    content:{location: {url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf"}},
+                    metaData:{fileName: "Bodea Brochure.pdf"}
+                }, {});
+            });
+        </script>
       </div>
     </div>
   </section>
