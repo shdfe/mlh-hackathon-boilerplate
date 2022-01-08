@@ -19,11 +19,11 @@ layout: default
         <div id="adobe-dc-view"></div>
         <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
         <script type="text/javascript">
+            blobDoc = fetch("https://altohacks.github.io/altohacks/sponsorpacket.pdf").then(response => response.blob()).then(data => URL.createObjectURL(data))
             document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
                 var adobeDCView = new AdobeDC.View({clientId: "fb64659f0e51451687d96fd74e87b28b", divId: "adobe-dc-view"});
                 adobeDCView.previewFile({
-                    content:{location: {url: "https://altohacks.github.io/altohacks/sponsorpacket.pdf"}},
-                    headers: [{"Access-Control-Allow-Origin":"*"}, {"Access-Control-Allow-Headers":"X-Requested-With"}],
+                    content:{location: {url: blobDoc}},
                     metaData:{fileName: "Sponsor Packet.pdf"}
                 }, {});
             });
